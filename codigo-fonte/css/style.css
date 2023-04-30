@@ -1,0 +1,38 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* {
+    --primary: #0C1D47;
+}
+
+.toolbar {
+    height: 90px;
+    background-color: var(--primary);
+}
+
+.toolbarItens {
+    display: flex;
+    flex-direction: row;
+    height: 90px;
+    margin-left: 40px;
+    margin-right: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toolbarItens span {
+    font-weight: 400;
+    font-size: 36px;
+    color: #FFFFFF;
+}
+
+.toolbarItens button {
+    border-radius: 100%;
+    background-color: #2e416f;
+    border: #FFFFFF;
+}
+
+.toolbarItens button:active {
+    background-color: #FFFFFF;
+    border: #FFFFFF;
+}
