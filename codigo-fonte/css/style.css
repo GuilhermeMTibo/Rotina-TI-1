@@ -26,13 +26,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: #FFFFFF;
 }
 
+.toolbarItens img {
+    position: relative;
+    top: 2px;
+    width: 35px;
+}
+
 .toolbarItens button {
     border-radius: 100%;
+    width: 50px;
+    height: 50px;
     background-color: #2e416f;
-    border: #FFFFFF;
+    border: none;
 }
 
 .toolbarItens button:active {
-    background-color: #FFFFFF;
-    border: #FFFFFF;
+    background-color: var(--primary);
 }
