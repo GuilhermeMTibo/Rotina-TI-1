@@ -5,6 +5,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --primary: #0C1D47;
 }
 
+.page {
+    display: flex;
+    flex-direction: column;
+}
+
 .toolbar {
     height: 90px;
     background-color: var(--primary);
@@ -14,8 +19,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: flex;
     flex-direction: row;
     height: 90px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin: 0 40px;
     justify-content: space-between;
     align-items: center;
 }
