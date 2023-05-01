@@ -42,6 +42,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     height: 50px;
     background-color: #2e416f;
     border: none;
+    cursor: pointer;
 }
 
 .toolbarItens button:active {
