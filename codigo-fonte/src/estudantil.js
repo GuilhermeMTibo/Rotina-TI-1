@@ -1,5 +1,3 @@
-import * as Materia from '../modal/materia'
-
 var materias = JSON.parse('../json/materia.json');
 console.log(materias)
 
