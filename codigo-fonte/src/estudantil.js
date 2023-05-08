@@ -1,9 +1,15 @@
-var materias = JSON.parse('../json/materia.json');
-console.log(materias)
+var json = JSON.parse();
+console.log(json)
 
 function salvar() {
-    console.log(nome)
-    let mat = new Materia('Teste', 100, 60)
-    materias.push(mat)
-    console.log(JSON.stringify(materias))
+    let nome = document.getElementById("nome").value
+    let pontos = document.getElementById("pontos").value
+    let media = document.getElementById("media").value
+    let mat = {
+        nome: nome, 
+        pontos: pontos, 
+        media: media
+    }
+    json.materias.push(mat)
+    console.log(mat)
 }
