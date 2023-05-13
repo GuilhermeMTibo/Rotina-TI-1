@@ -10,21 +10,36 @@
     <script type="text/javascript" src="../src/pomodoro.js" defer></script>
     <title>Pomodoro</title>
 </head>
-
+<header><body>
+    <div class="page">
+        <div class="toolbar">
+            <div class="toolbarItens">
+                <span>Pomodoro</span>
+                <button onclick="window.location.href = '../html/index.html'">
+                    <img src="../assets/home.svg">
+                </button>
+            </div>
+        </div></header>
 <body>
 
-    <body>
-        <div class="page">
-            <div class="toolbar">
-                <div class="toolbarItens">
-                    <span>Pomodoro</span>
-                    <button onclick="window.location.href = '../html/index.html'">
-                        <img src="../assets/home.svg">
-                    </button>
-                </div>
-            </div>
-            <div id="timerEstudo"></div>
-            <div id="timerDescanso"></div>
-    </body>
+    <div class="MomentoConcentração">
+        <div class="ParteCima">
+            <button>
+                <img src="../assets/Start.png" alt="">
+            </button>
+            <div id="timerEstudo" class="timer1"></div>
+            <div class="ParteBaixo"></div>
+        </div>
+    </div>
+    <div class="MomentoDescanso">
+        <div class="ParteCima">
+            <button>
+                <img src="../assets/Pause.png" alt="">
+            </button>
+            <div id="timerDescanso" class="timer2"></div>
+            <div class="ParteBaixo"></div>
+        </div>
+    </div>
+</body>
 
 </html>
