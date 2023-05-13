@@ -51,3 +51,9 @@
 .content .areaPontosMedia input {
     width: 90px !important;
 }
+
+.listaMaterias {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
