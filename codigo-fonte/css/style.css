@@ -45,7 +45,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     cursor: pointer;
 }
 
-.toolbarItens button:active {
+.toolbarItens button:hover {
     background-color: var(--primary);
 }
 
