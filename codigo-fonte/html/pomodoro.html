@@ -10,7 +10,7 @@
     <script type="text/javascript" src="../src/pomodoro.js" defer></script>
     <title>Pomodoro</title>
 </head>
-<header><body>
+<header>
     <div class="page">
         <div class="toolbar">
             <div class="toolbarItens">
@@ -19,12 +19,14 @@
                     <img src="../assets/home.svg">
                 </button>
             </div>
-        </div></header>
+        </div>
+</header>
+
 <body>
 
     <div class="MomentoConcentração">
         <div class="ParteCima">
-            <button>
+            <button onclick="startTimer()">
                 <img src="../assets/Start.png" alt="">
             </button>
             <div id="timerEstudo" class="timer1"></div>
@@ -33,7 +35,7 @@
     </div>
     <div class="MomentoDescanso">
         <div class="ParteCima">
-            <button>
+            <button onclick="pauseTimer()">
                 <img src="../assets/Pause.png" alt="">
             </button>
             <div id="timerDescanso" class="timer2"></div>

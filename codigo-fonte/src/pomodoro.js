@@ -1,25 +1,28 @@
-function comecaTimer(duracao, display){
+var intervalo;// variável para armazenar o tempo
+function comecaTimer(duracao, display) {
+    var timer = duracao;
+    var minutos, segundos;
 
-    var timer =duracao,minutos,segundos;
+    intervalo = setInterval(function () {
+        minutos = parseInt(timer / 60, 10);
+        segundos = parseInt(timer % 60, 10);
 
-    setInterval(function(){
-
-        minutos= parseInt(timer/60,10 );
-        segundos= parseInt(timer%60,10);
-
-        minutos = minutos> 10 ? "0" + minutos:minutos; 
-        segundos = segundos> 10? "0" + segundos:segundos;
+        minutos = minutos < 10 ? "0" + minutos : minutos;
+        segundos = segundos < 10 ? "0" + segundos : segundos;
 
         display.textContent = minutos + ":" + segundos;
 
-        if(--timer < 0){
-            timer = duracao;  
+        if (--timer < 0) {
+            timer = duracao;
         }
-
-    },1000);
+    }, 1000);
 }
 
-window.onload = function(){
+function pauseTimer(){
+    clearInterval(intervalo);//pausa o timer
+}
+
+function startTimer() {
 
     var duracao = 60*60;//conversao para segundos
     var display= document.querySelector("#timerEstudo");// elemento para exibir o timer
