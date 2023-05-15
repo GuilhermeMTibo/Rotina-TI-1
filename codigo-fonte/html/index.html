@@ -13,7 +13,7 @@
     <div class="toolbarItens">
         <span>Routine Organizer</span>
         <button onclick="window.location.href = '../html/estudantil.html'">
-            <img src="../assets/school.png">
+            <img src="../assets/home.svg">
         </button>
         </div>
     </div>
@@ -45,7 +45,7 @@
                     <td><input type="text" id="sexta-feira-input" class="routine-input"></td>
                     <td><input type="text" id="sabado-input" class="routine-input"></td>
                     <td class="Adicionar-Tarefas">
-                      <button onclick="addActivity()">Adicionar</button>
+                      <button onclick="window.location.href='#modalRotina'">Adicionar</button>
                     </td>
                   </tr>
                   <tr>
@@ -57,7 +57,7 @@
                     <td><input type="text" id="sexta-feira-input" class="routine-input"></td>
                     <td><input type="text" id="sabado-input" class="routine-input"></td>
                     <td class="Adicionar-Tarefas">
-                      <button onclick="addActivity()">Adicionar</button>
+                      <button onclick="window.location.href='#modalRotina'">Adicionar</button>
                     </td>
                   </tr>
                   <tr>
@@ -69,7 +69,7 @@
                     <td><input type="text" id="sexta-feira-input" class="routine-input"></td>
                     <td><input type="text" id="sabado-input" class="routine-input"></td>
                     <td class="Adicionar-Tarefas">
-                      <button onclick="addActivity()">Adicionar</button>
+                      <button onclick="window.location.href='#modalRotina'">Adicionar</button>
                     </td>
                   </tr>
                   <tr>
@@ -81,7 +81,7 @@
                     <td><input type="text" id="sexta-feira-input" class="routine-input"></td>
                     <td><input type="text" id="sabado-input" class="routine-input"></td>
                     <td class="Adicionar-Tarefas">
-                      <button onclick="addActivity()">Adicionar</button>
+                      <button onclick="window.location.href='#modalRotina'">Adicionar</button>
                     </td>
                   </tr>
                   <tr>
@@ -93,7 +93,7 @@
                     <td><input type="text" id="sexta-feira-input" class="routine-input"></td>
                     <td><input type="text" id="sabado-input" class="routine-input"></td>
                     <td class="Adicionar-Tarefas">
-                      <button onclick="addActivity()">Adicionar</button>
+                      <button onclick="window.location.href='#modalRotina'">Adicionar</button>
                     </td>
                   </tr>
                   <tr>
@@ -105,7 +105,7 @@
                     <td><input type="text" id="sexta-feira-input" class="routine-input"></td>
                     <td><input type="text" id="sabado-input" class="routine-input"></td>
                     <td class="Adicionar-Tarefas">
-                      <button onclick="addActivity()">Adicionar</button>
+                      <button onclick="window.location.href='#modalRotina'">Adicionar</button>
                     </td>
                   </tr>
                   <tr>
@@ -117,7 +117,7 @@
                     <td><input type="text" id="sexta-feira-input" class="routine-input"></td>
                     <td><input type="text" id="sabado-input" class="routine-input"></td>
                     <td class="Adicionar-Tarefas">
-                      <button onclick="addActivity()">Adicionar</button>
+                      <button onclick="window.location.href='#modalRotina'">Adicionar</button>
                     </td>
                   </tr>
                   <tr>
@@ -129,7 +129,7 @@
                     <td><input type="text" id="sexta-feira-input" class="routine-input"></td>
                     <td><input type="text" id="sabado-input" class="routine-input"></td>
                     <td class="Adicionar-Tarefas">
-                      <button onclick="addActivity()">Adicionar</button>
+                      <button onclick="window.location.href='#modalRotina'">Adicionar</button>
                     </td>
                   </tr>
                   <tr>
@@ -141,7 +141,7 @@
                     <td><input type="text" id="sexta-feira-input" class="routine-input"></td>
                     <td><input type="text" id="sabado-input" class="routine-input"></td>
                     <td class="Adicionar-Tarefas">
-                      <button onclick="addActivity()">Adicionar</button>
+                      <button onclick="window.location.href='#modalRotina'">Adicionar</button>
                     </td>
                   </tr>
                   <tr>
@@ -153,36 +153,34 @@
                     <td><input type="text" id="sexta-feira-input" class="routine-input"></td>
                     <td><input type="text" id="sabado-input" class="routine-input"></td>
                     <td class="Adicionar-Tarefas">
-                      <button onclick="addActivity()">Adicionar</button>
+                      <button onclick="window.location.href='#modalRotina'">Adicionar</button>
                     </td>
                   </tr>
                 </tfoot>
               </table>
         </div>
 
-        <div id="modalMateria" class="modal">
+        <div id="modalRotina" class="modal">
           <div class="content">
-            <h1>Criar Matéria</h1>
-         
-            <div class="areaInput" style="margin-left: 30px;">
-              <span>Nome</span>
+            <h1>Criar Rotina</h1>
+
+            <div class="areaInput" style="margin-left: 0px;">
+              <span>Nome da Rotina</span>
+              <input type="text" id="nome">
+            </div><br>
+
+            <div class="areaInput" style="margin-left: 0px;">
+              <span>Objetivo</span>
               <input type="text" id="nome">
             </div>
 
-            <div class="areaPontosMedia">
-              <div class="areaInput">
-                  <span>Pontos Total</span>
-                  <input type="number" id="pontos">
-              </div>
-
-              <div class="areaInput">
-                  <span>Média %</span>
-                  <input type="number" id="media">
-              </div>
-            </div>
-            
+            <label class="container">
+              <input type="checkbox" checked="checked">
+              <span class="checkmark"></span>
+            </label>
+        
             <div class="botoesCRUD" style="margin-top: 10px;">
-              <button class="btnSalvar" onclick="salvar()">
+              <button class="btnSalvar">
                   Salvar
               </button>
 
