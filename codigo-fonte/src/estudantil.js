@@ -1,7 +1,6 @@
 var materias = localStorage.getItem('materias') ? JSON.parse(localStorage.getItem('materias')) : []
 
 var listaMaterias = document.getElementById("listaMateriasDiv")
-console.log(listaMaterias)
 if(materias.length > 0) {
     materias.forEach(mat => {
         var cardMateria = document.createElement('div')
