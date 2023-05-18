@@ -102,3 +102,54 @@
     border-radius: 50px;
     background-color: #59595a;
 }
+
+.botaoRemover span {
+    color: #FFFFFF;
+}
+
+.botaoRemover:hover span {
+    color: black;
+}
+
+.areaTarefa {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    left: 130px;
+    width: 445px;
+    min-height: calc(100vh - 185px);
+    text-align: center;
+}
+
+.areaTarefa span {
+    position: relative;
+    top: 30px;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.botaoTarefa {
+    float: left;
+    width: 149px;
+    height: 24px;
+    margin-top: 50px;
+    margin-left: 15px;
+    background-color: #D9D9D9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.botaoTarefa:hover {
+    background-color: #D9D9D9;
+    border: none;
+}
+
+.botaoTarefa:active {
+    box-shadow: none;
+}
+
+table {
+    margin-top: 30px;
+}
