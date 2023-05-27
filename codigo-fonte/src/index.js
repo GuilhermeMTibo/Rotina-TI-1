@@ -53,5 +53,6 @@ function addActivity() {
     activityCell 
   }
 
-
-   
+function salvar() {
+  console.log("Salvar funcionando")
+}
