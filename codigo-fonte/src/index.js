@@ -54,5 +54,8 @@ function addActivity() {
   }
 
 function salvar() {
-  console.log("Salvar funcionando")
+  var nome = document.getElementById('nome').value
+  var teste = document.getElementById('domingo-input')
+  console.log(nome)
+  teste.innerHTML = nome
 }
