@@ -52,3 +52,6 @@ function addActivity() {
     activityInput.value = activityCell.textContent;
     activityCell 
   }
+
+
+   
