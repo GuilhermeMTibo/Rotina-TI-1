@@ -55,8 +55,15 @@ function addActivity() {
 
 function salvar() {
   var nome = document.getElementById('nome').value
-  var teste = document.getElementById('domingo-input')
-  console.log(nome)
+  var teste = document.getElementById('domingo-input');
+  var teste = document.getElementById('segunda-feira-input');
+  var teste = document.getElementById('terca-feira-input');
+  var teste = document.getElementById('quarta-feira-input');
+  var teste = document.getElementById('quinta-feira-input');
+  var teste = document.getElementById('sexta-feira-input');
+  var teste = document.getElementById('sabado-input');
+  console.log(nome);
   teste.innerHTML = nome
+  window.location.href='#'
 }
 
