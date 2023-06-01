@@ -1,5 +1,8 @@
 var intervaloEstudo; // variável para armazenar o intervalo de estudo
 var intervaloDescanso; // variável para armazenar o intervalo de descanso
+var timerEmAndamento = false; // Variável para controlar se o timer está em andamento
+var duracaoEstudo = 60 * 60; // Duração do estudo em segundos
+var tempoRestante = duracaoEstudo; // Tempo restante do timer, inicialmente igual à duração
 
 function comecaTimer(duracao, display) {
     var timer = duracao;
@@ -22,52 +25,40 @@ function comecaTimer(duracao, display) {
     return intervalo;
 }
 
-var timerEmAndamento = false; // Variável para controlar se o timer está em andamento
-var tempoRestante = 0; // Variável para armazenar o tempo restante do timer
-
 function iniciarEstudo() {
-    var duracaoEstudo = 60 * 60; // conversão para segundos
     var displayEstudo = document.querySelector("#timerEstudo"); // elemento para exibir o timer
     var botaoStart = document.querySelector("#startButton"); // elemento do botão
     var imagemStart = document.querySelector("#startImage"); // elemento da imagem do botão
 
     if (!timerEmAndamento) {
-        if (tempoRestante === 0) {
-            // Se não há tempo restante, inicia o timer com a duração completa
-            intervaloEstudo = comecaTimer(duracaoEstudo, displayEstudo);
-        } else {
-            // Se há tempo restante, inicia o timer com o tempo restante
-            intervaloEstudo = comecaTimer(tempoRestante, displayEstudo);
-        }
-        
+        intervaloEstudo = comecaTimer(tempoRestante, displayEstudo); // inicia o timer com o tempo restante
+
         timerEmAndamento = true;
         imagemStart.src = "../assets/Pause.png"; // Altera a imagem do botão para Pause
         imagemStart.alt = "Pause";
     } else {
-        clearInterval(intervaloEstudo); // Pausa o timer de estudo
-        timerEmAndamento = false;
-        imagemStart.src = "../assets/Start.png"; // Altera a imagem do botão para Start
-        imagemStart.alt = "Start";
-
-        // Armazena o tempo restante do timer
-        var minutos = parseInt(displayEstudo.querySelector("#minutos").textContent);
-        var segundos = parseInt(displayEstudo.querySelector("#segundos").textContent);
-        tempoRestante = minutos * 60 + segundos;
+        pausarTimer(displayEstudo); // Pausa o timer de estudo
     }
 }
+
 function iniciarDescanso() {
     var duracaoDescanso = 10 * 60; // conversão para segundos
     var displayDescanso = document.querySelector("#timerDescanso"); // elemento para exibir o timer
     intervaloDescanso = comecaTimer(duracaoDescanso, displayDescanso); // Inicia o timer de descanso
 }
 
-function pausarTimer() {
-    if (intervaloEstudo) {
+function pausarTimer(display) {
+    if (timerEmAndamento) {
         clearInterval(intervaloEstudo); // Pausa o timer de estudo
-        intervaloEstudo = null;
-    }
-    if (intervaloDescanso) {
-        clearInterval(intervaloDescanso); // Pausa o timer de descanso
-        intervaloDescanso = null;
+        timerEmAndamento = false;
+
+        // Armazena o tempo restante do timer
+        var minutos = parseInt(display.textContent.split(":")[0]);
+        var segundos = parseInt(display.textContent.split(":")[1]);
+        tempoRestante = minutos * 60 + segundos;
+
+        var imagemStart = document.querySelector("#startImage"); // elemento da imagem do botão
+        imagemStart.src = "../assets/Start.png"; // Altera a imagem do botão para Start
+        imagemStart.alt = "Start";
     }
 }
