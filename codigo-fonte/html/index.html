@@ -1,166 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="../css/index.css" type="text/css" media="screen">
-    <script defer type="text/javascript" src="../src/index.js"></script>
-    <title>Routine Organizer</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="../css/index.css" type="text/css" media="screen">
+  <script defer type="text/javascript" src="../src/index.js"></script>
+  <title>Routine Organizer</title>
 </head>
+
 <body>
+  
+  <div class="rectangle">
+    <div class="inner-rectangle" ></div>
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <button class="button" onclick="buttonClicked()">+</button>
+  </div>
+  
+  <div class="rectangle">
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <button class="button" onclick="buttonClicked()">+</button>
+  </div>
+  <div class="rectangle">
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <button class="button" onclick="buttonClicked()">+</button>
+  </div>
+  <div class="rectangle">
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <button class="button" onclick="buttonClicked()">+</button>
+  </div>
+  <div class="rectangle">
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <button class="button" onclick="buttonClicked()">+</button>
+  </div>
+  <div class="rectangle">
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <button class="button" onclick="buttonClicked()">+</button>
+  </div>
+  <div class="rectangle">
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <div class="inner-rectangle"></div>
+    <button class="button" onclick="buttonClicked()">+</button>
+  </div>
+
+  
   <div class="toolbar">
     <div class="toolbarItens">
-        <span>Routine Organizer</span>
-        <button onclick="window.location.href = '../html/estudantil.html'">
-            <img src="../assets/home.svg">
-        </button>
-        </div>
+      <span>Routine Organizer</span>
+      <button onclick="window.location.href = '../html/estudantil.html'">
+        <img src="../assets/home.svg">
+      </button>
     </div>
-        <div class="container">
-            <table class="routine-table">
-                <thead>
-                  <tr>
-                    <th>Domingo</th>
-                    <th>Segunda-Feira</th>
-                    <th>Terça-Feira</th>
-                    <th>Quarta-Feira</th>
-                    <th>Quinta-Feira</th>
-                    <th>Sexta-Feira</th>
-                    <th>Sábado</th>
-                  </tr>
-                </thead>
-
-                <tbody id="routine-body">
-                  <!-- Linhas de atividades serão adicionadas dinamicamente aqui -->
-                </tbody>
-
-                <tfoot>
-                  <tr class="tabela">
-                    <td><button onclick="window.location.href='#modalRotina'" id="domingo-input" class="routine-input">Adicionar</button></td>
-                    <td><button onclick="window.location.href='#modalRotina'"id="segunda-feira-input" class="routine-input">Adicionar</button></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="terca-feira-input" class="routine-input">Adicionar</button></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quarta-feira-input" class="routine-input">Adicionar</button></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quinta-feira-input" class="routine-input">Adicionar</button></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sexta-feira-input" class="routine-input">Adicionar</button></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sabado-input" class="routine-input">Adicionar</button></td>
-                  </tr>
-                  <tr class="tabela">
-                    <td><button onclick="window.location.href='#modalRotina'" id="domingo-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="segunda-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="terca-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quarta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quinta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sexta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sabado-input" class="routine-input"></td>
-                  </tr>
-                  <tr class="tabela">
-                    <td><button onclick="window.location.href='#modalRotina'" id="domingo-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="segunda-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="terca-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quarta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quinta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sexta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sabado-input" class="routine-input"></td>
-                  </tr>
-                  <tr class="tabela">
-                    <td><button onclick="window.location.href='#modalRotina'" id="domingo-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="segunda-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="terca-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quarta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quinta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sexta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sabado-input" class="routine-input"></td>
-                  </tr>
-                  <tr class="tabela">
-                    <td><button onclick="window.location.href='#modalRotina'" id="domingo-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="segunda-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="terca-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quarta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quinta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sexta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sabado-input" class="routine-input"></td>
-                  </tr>
-                  <tr class="tabela">
-                    <td><button onclick="window.location.href='#modalRotina'" id="domingo-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="segunda-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="terca-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quarta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quinta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sexta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sabado-input" class="routine-input"></td>
-                  </tr>
-                  <tr class="tabela">
-                    <td><button onclick="window.location.href='#modalRotina'" id="domingo-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="segunda-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="terca-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quarta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quinta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sexta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sabado-input" class="routine-input"></td>
-                  </tr>
-                  <tr class="tabela">
-                    <td><button onclick="window.location.href='#modalRotina'" id="domingo-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="segunda-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="terca-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quarta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quinta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sexta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sabado-input" class="routine-input"></td>
-                  </tr>
-                  <tr class="tabela">
-                    <td><button onclick="window.location.href='#modalRotina'" id="domingo-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="segunda-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="terca-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quarta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quinta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sexta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sabado-input" class="routine-input"></td>
-                  </tr>
-                  <tr class="tabela">
-                    <td><button onclick="window.location.href='#modalRotina'" id="domingo-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="segunda-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="terca-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quarta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="quinta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sexta-feira-input" class="routine-input"></td>
-                    <td><button onclick="window.location.href='#modalRotina'" id="sabado-input" class="routine-input"></td>
-                  </tr>
-                </tfoot>
-              </table>
-        </div>
-
-        <div id="modalRotina" class="modal">
-          <div class="content">
-            <h1>Criar Rotina</h1>
-
-            <div class="areaInput" style="margin-left: 0px;">
-              <span>Nome da Rotina</span>
-              <input id="nome">
-            </div><br>
-
-            <div class="areaInput" style="margin-left: 0px;">
-              <span>Objetivo</span>
-              <input id="nome">
-            </div>
-
-            <label class="container">
-              <input type="checkbox" checked="checked">
-              <span class="checkmark"></span>
-            </label>
-        
-            <div class="botoesCRUD" style="margin-top: 10px;">
-              <button class="btnSalvar" onclick="salvar()">
-                  Salvar
-              </button>
-
-              <button class="btnCancelar" onclick="window.location.href = '#'">
-                  Cancelar
-              </button>
-            </div>
-          </div>
-        </div>
+  </div>
+  <div class="container">
+    <table class="routine-table">
+      <thead>
+        <tr>
+          <th>Domingo</th>
+          <th>Segunda-Feira</th>
+          <th>Terça-Feira</th>
+          <th>Quarta-Feira</th>
+          <th>Quinta-Feira</th>
+          <th>Sexta-Feira</th>
+          <th>Sábado</th>
+        </tr>
+      </thead>
 
 </body>
 </html>
