@@ -50,47 +50,12 @@ body {
 
 .rectangle {
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
   width: 160px;
   height: 670px;
   background: #FFFFFF;
   border: 1px solid #000000;
   border-radius: 20px;
-}
-
-.rectangle:nth-child(1) {
-  left: 55px;
-  top: 145px;
-}
-
-.rectangle:nth-child(2) {
-  left: 225px;
-  top: 145px;
-}
-
-.rectangle:nth-child(3) {
-  left: 395px;
-  top: 145px;
-}
-
-.rectangle:nth-child(4) {
-  left: 565px;
-  top: 145px;
-}
-
-.rectangle:nth-child(5) {
-  left: 735px;
-  top: 145px;
-}
-
-.rectangle:nth-child(6) {
-  left: 905px;
-  top: 145px;
-}
-
-.rectangle:nth-child(7) {
-  left: 1075px;
-  top: 145px;
 }
 
 .inner-rectangle {
