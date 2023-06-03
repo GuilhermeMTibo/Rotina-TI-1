@@ -1,69 +1,29 @@
-function addActivity() {
-    var activityInput = document.getElementById("activity-input");
-    var timeInput = document.getElementById("time-input");
-    var dayInput = document.getElementById("day-input");
-    var routineBody = document.getElementById("routine-body");
-    
-    var newRow = document.createElement("tr");
-    var activityCell = document.createElement("td");
-    activityCell.textContent = activityInput.value;
-    newRow.appendChild(activityCell);
-    
-    var timeCell = document.createElement("td");
-    timeCell.textContent = timeInput.value;
-    newRow.appendChild(timeCell);
-    
-    var dayCell = document.createElement("td");
-    dayCell.textContent = dayInput.value;
-    newRow.appendChild(dayCell);
-    
-    var actionsCell = document.createElement("td");
-    var editButton = document.createElement("button");
-    editButton.textContent = "Editar";
-    editButton.addEventListener("click", function() {
-      editActivity(this);
-    });
-    actionsCell.appendChild(editButton);
-    
-    var removeButton = document.createElement("button");
-    removeButton.textContent = "Remover";
-    removeButton.addEventListener("click", function() {
-      removeActivity(this);
-    });
-    actionsCell.appendChild(removeButton);
-    
-    newRow.appendChild(actionsCell);
-    routineBody.appendChild(newRow);
-    
-    activityInput.value = "";
-    timeInput.value = "";
-    dayInput.value = "";
-  }
-  
-  function editActivity(button) {
-    var row = button.parentNode.parentNode;
-    var activityCell = row.cells[0];
-    var timeCell = row.cells[1];
-    var dayCell = row.cells[2];
-    
-    var activityInput = document.createElement("input");
-    activityInput.type = "text";
-    activityInput.className = "routine-input";
-    activityInput.value = activityCell.textContent;
-    activityCell 
-  }
-
-function salvar() {
-  var nome = document.getElementById('nome').value
-  var teste = document.getElementById('domingo-input');
-  var teste = document.getElementById('segunda-feira-input');
-  var teste = document.getElementById('terca-feira-input');
-  var teste = document.getElementById('quarta-feira-input');
-  var teste = document.getElementById('quinta-feira-input');
-  var teste = document.getElementById('sexta-feira-input');
-  var teste = document.getElementById('sabado-input');
-  console.log(nome);
-  teste.innerHTML = nome
-  window.location.href='#'
+function buttonClicked() {
+  // exibir o dia da semana no console
+  var diaSemana = this.parentNode.querySelector("span").innerText;
+  console.log("Botão clicado para o dia:", diaSemana);
 }
 
+//adiciona o evento de clique a todos os botões com a classe "button"
+var buttons = document.getElementsByClassName("button");
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", buttonClicked);
+}
+
+//função chamada quando o botão "Salvar" é clicado
+function salvar() {
+  var nomeRotina = document.getElementById("nome").value;
+  console.log("Nome da rotina:", nomeRotina);
+  var objetivo = document.getElementById("objetivo").value;
+  console.log("Objetivo:", objetivo);
+
+  //verificar se o checkbox está marcado
+  var checkbox = document.getElementById("checkbox");
+  var isChecked = checkbox.checked;
+  console.log("Checkbox marcado:", isChecked);
+
+  var btnCancelar = document.querySelector(".btnCancelar");
+  btnCancelar.addEventListener("click", function() {
+    window.location.href = "#";
+  });
+}

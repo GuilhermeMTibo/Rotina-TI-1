@@ -1,4 +1,4 @@
-body {
+.body {
   font-family: "Spartan", sans-serif;
   color: black;
 }
@@ -8,19 +8,6 @@ body {
   padding: 2%;
   background-color: darkblue;
 }
-
-.routine-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.routine-table th,
-.routine-table td {
-  border: 1px solid #000;
-  padding: 8px;
-}
-
-.routine-table tr {}
 
 .routine-header {
   background-color: #f2f2f2;
