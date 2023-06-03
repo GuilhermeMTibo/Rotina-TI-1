@@ -2,6 +2,18 @@ var rotinas = localStorage.getItem("rotinas") ? JSON.parse(localStorage.getItem(
 var objetivos = localStorage.getItem("objetivos") ? JSON.parse(localStorage.getItem("objetivos")) : []
 var diaSemanaSelecionado
 
+for(let j = 0; j<rotinas.length; j++)
+  {
+    //parte com informações já cadastradas (até a 14)
+    let retanguloSemana = document.getElementById(`semana-${rotinas[j].diaSemana}`)
+    let innerRetangle = document.createElement('div')
+    innerRetangle.setAttribute('class', 'inner-rectangle')
+    let nomeRotinaSpan = document.createElement('span')
+    nomeRotinaSpan.appendChild(document.createTextNode(rotinas[j].nome))
+    innerRetangle.appendChild(nomeRotinaSpan)
+    retanguloSemana.appendChild(innerRetangle)
+  }
+
 function buttonClicked(diaSemana) {
   diaSemanaSelecionado = diaSemana.target ? diaSemana.target.attributes[1].nodeValue.split("'")[1] : null
   window.location.href = '#modalRotina'
@@ -24,10 +36,15 @@ function salvarRotina() {
 
   rotinas.push(rot)
   localStorage.setItem("rotinas", JSON.stringify(rotinas))
+
+  //mostrar em tela as informações salvas (até a 48)
+
   let retanguloSemana = document.getElementById(`semana-${diaSemanaSelecionado}`)
   let innerRetangle = document.createElement('div')
   innerRetangle.setAttribute('class', 'inner-rectangle')
-
+  let nomeRotinaSpan = document.createElement('span')
+  nomeRotinaSpan.appendChild(document.createTextNode(rot.nome))
+  innerRetangle.appendChild(nomeRotinaSpan)
   retanguloSemana.appendChild(innerRetangle)
 
   window.location.href = '#'
