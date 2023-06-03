@@ -1,7 +1,11 @@
-function buttonClicked() {
-  // exibir o dia da semana no console
-  var diaSemana = this.parentNode.querySelector("span").innerText;
-  console.log("Botão clicado para o dia:", diaSemana);
+var rotinas = localStorage.getItem("rotinas") ? JSON.parse(localStorage.getItem("rotinas")) : []
+var objetivos = localStorage.getItem("objetivos") ? JSON.parse(localStorage.getItem("objetivos")) : []
+var diaSemanaSelecionado
+
+function buttonClicked(diaSemana) {
+  console.log(diaSemana)
+  diaSemanaSelecionado = diaSemana
+  window.location.href = '#modalRotina'
 }
 
 //adiciona o evento de clique a todos os botões com a classe "button"
@@ -10,20 +14,39 @@ for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", buttonClicked);
 }
 
-//função chamada quando o botão "Salvar" é clicado
-function salvar() {
-  var nomeRotina = document.getElementById("nome").value;
-  console.log("Nome da rotina:", nomeRotina);
-  var objetivo = document.getElementById("objetivo").value;
-  console.log("Objetivo:", objetivo);
+function salvarRotina() {
+  let nome = document.getElementById("nome").value
+  
+  let rot = {
+      id: rotinas[rotinas.length - 1] ? rotinas[rotinas.length - 1].id + 1 : 1,
+      nome: nome,
+      diaSemana: diaSemanaSelecionado 
+  }
 
-  //verificar se o checkbox está marcado
-  var checkbox = document.getElementById("checkbox");
-  var isChecked = checkbox.checked;
-  console.log("Checkbox marcado:", isChecked);
+  rotinas.push(rot)
+  localStorage.setItem("rotinas", JSON.stringify(rotinas))
+  console.log(diaSemanaSelecionado)
+  let retanguloSemana = document.getElementById(`semana-${diaSemanaSelecionado}`)
+  let innerRetangle = document.createElement('div')
+  innerRetangle.setAttribute('class', 'inner-rectangle')
 
-  var btnCancelar = document.querySelector(".btnCancelar");
-  btnCancelar.addEventListener("click", function() {
-    window.location.href = "#";
-  });
+  retanguloSemana.appendChild(innerRetangle)
+
+  window.location.href = '#'
 }
+
+function salvarNomeObjetivo() {
+  let nome = document.getElementById("nomeObjetivo").value
+  
+  let obj = {
+      id: objetivos[objetivos.length - 1] ? objetivos[objetivos.length - 1].id + 1 : 1,
+      nome: nome, 
+      rotinaId: rotinas[rotinas.length - 1] ? rotinas[rotinas.length - 1].id + 1 : 1,
+  }
+
+  objetivos.push(obj)
+  localStorage.setItem("objetivos", JSON.stringify(objetivos))
+}
+
+
+

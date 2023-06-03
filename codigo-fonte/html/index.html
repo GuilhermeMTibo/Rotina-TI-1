@@ -22,69 +22,69 @@
   </div>
   
   <div style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 20px; margin-left: 10px; margin-right: 10px;">
-    <div class="rectangle">
+    <div class="rectangle" id="semana-1">
       <div style="display: flex; justify-content: center; margin-top: 10px; border-bottom: 1px solid black;">
         <span style="font-weight: 600; font-size: 15px;">Domingo</span>
       </div>
       <div class="inner-rectangle" ></div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <button class="button" onclick="buttonClicked()">+</button>
+      
+      
+      <button class="button" onclick="buttonClicked('1')">+</button>
     </div>
     
-    <div class="rectangle">
+    <div class="rectangle" id="semana-2">
       <div style="display: flex; justify-content: center; margin-top: 10px; border-bottom: 1px solid black;">
         <span style="font-weight: 600; font-size: 15px;">Segunda-Feira</span>
       </div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <button class="button" onclick="buttonClicked()">+</button>
+      
+      
+      
+      <button class="button" onclick="buttonClicked('2')">+</button>
     </div>
-    <div class="rectangle">
+    <div class="rectangle" id="semana-3">
       <div style="display: flex; justify-content: center; margin-top: 10px; border-bottom: 1px solid black;">
         <span style="font-weight: 600; font-size: 15px;">Terça-Feira</span>
       </div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <button class="button" onclick="buttonClicked()">+</button>
+      
+      
+      
+      <button class="button" onclick="buttonClicked('3')">+</button>
     </div>
-    <div class="rectangle">
+    <div class="rectangle" id="semana-4">
       <div style="display: flex; justify-content: center; margin-top: 10px; border-bottom: 1px solid black;">
         <span style="font-weight: 600; font-size: 15px;">Quarta-Feira</span>
       </div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <button class="button" onclick="buttonClicked()">+</button>
+      
+      
+      
+      <button class="button" onclick="buttonClicked('4')">+</button>
     </div>
-    <div class="rectangle">
+    <div class="rectangle" id="semana-5">
       <div style="display: flex; justify-content: center; margin-top: 10px; border-bottom: 1px solid black;">
         <span style="font-weight: 600; font-size: 15px;">Quinta-Feira</span>
       </div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <button class="button" onclick="buttonClicked()">+</button>
+      
+      
+      
+      <button class="button" onclick="buttonClicked('5')">+</button>
     </div>
-    <div class="rectangle">
+    <div class="rectangle" id="semana-6">
       <div style="display: flex; justify-content: center; margin-top: 10px; border-bottom: 1px solid black;">
         <span style="font-weight: 600; font-size: 15px;">Sexta-Feira</span>
       </div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <button class="button" onclick="buttonClicked()">+</button>
+      
+      
+      
+      <button class="button" onclick="buttonClicked('6')">+</button>
     </div>
-    <div class="rectangle">
+    <div class="rectangle" id="semana-7">
       <div style="display: flex; justify-content: center; margin-top: 10px; border-bottom: 1px solid black;">
         <span style="font-weight: 600; font-size: 15px;">Sábado</span>
       </div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <div class="inner-rectangle"></div>
-      <button class="button" onclick="buttonClicked()">+</button>
+      
+      
+      
+      <button class="button" onclick="buttonClicked('7')">+</button>
     </div>
   </div>
 
@@ -99,7 +99,7 @@
 
       <div class="areaInput" style="margin-left: 0px;">
         <span>Objetivo</span>
-        <input id="nome">
+        <input id="nomeObjetivo">
       </div>
 
       <label class="container">
@@ -108,7 +108,7 @@
       </label>
   
       <div class="botoesCRUD" style="margin-top: 10px;">
-        <button class="btnSalvar" onclick="salvar()">
+        <button class="btnSalvar" onclick="salvarRotina()">
             Salvar
         </button>
 
