@@ -3,8 +3,7 @@ var objetivos = localStorage.getItem("objetivos") ? JSON.parse(localStorage.getI
 var diaSemanaSelecionado
 
 function buttonClicked(diaSemana) {
-  console.log(diaSemana)
-  diaSemanaSelecionado = diaSemana
+  diaSemanaSelecionado = diaSemana.target ? diaSemana.target.attributes[1].nodeValue.split("'")[1] : null
   window.location.href = '#modalRotina'
 }
 
@@ -25,7 +24,6 @@ function salvarRotina() {
 
   rotinas.push(rot)
   localStorage.setItem("rotinas", JSON.stringify(rotinas))
-  console.log(diaSemanaSelecionado)
   let retanguloSemana = document.getElementById(`semana-${diaSemanaSelecionado}`)
   let innerRetangle = document.createElement('div')
   innerRetangle.setAttribute('class', 'inner-rectangle')
