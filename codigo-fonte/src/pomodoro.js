@@ -1,7 +1,11 @@
 var intervalo;
 var timerEmAndamento = false;
-var duracaoEstudo = 60 * 60; // Duração do estudo em segundos (1 minuto)
-var duracaoDescanso = 60 * 10; // Duração do descanso em segundos (10 minutos)
+var MinEstudo=localStorage.getItem("configPomodoro") ? JSON.parse(localStorage.getItem("configPomodoro")).concentracao ? JSON.parse(localStorage.getItem("configPomodoro")).concentracao :60 : 60;
+var MinDescanso=localStorage.getItem("configPomodoro") ? JSON.parse(localStorage.getItem("configPomodoro")).descanso ?JSON.parse(localStorage.getItem("configPomodoro")).descanso : 10: 10;
+
+var duracaoEstudo = 60 * MinEstudo; // Duração do estudo em segundos (1 minuto)
+var duracaoDescanso = 60 * MinDescanso; // Duração do descanso em segundos (10 minutos)
+
 var tempoRestante = duracaoEstudo; // Tempo restante do timer
 var emEstudo = true; // Variável para controlar se está no período de estudo
 
@@ -11,7 +15,7 @@ function iniciarTimer() {
     var imagemStart = document.querySelector("#startImage");
   
     if (!timerEmAndamento) {
-      intervalo = comecaTimer(tempoRestante, display, function() {
+      intervalo = comecaTimer(tempoRestante, display, function() { 
         // Callback executado ao terminar o timer
         pausarTimer(display);
         if (emEstudo) {
@@ -71,4 +75,23 @@ function comecaTimer(duracao, display, callback) {
   }, 1000);
 
   return intervalo;
+}
+function salvar() {
+  let concentracao = document.getElementById("concentracao").value
+  let descanso = document.getElementById("descanso").value
+  this.MinEstudo=concentracao
+  this.MinDescanso=descanso
+  let config={
+    concentracao:concentracao,
+    descanso:descanso,
+  }
+  this.emEstudo=true
+  this.tempoRestante= 60* concentracao
+  window.location.href = '#'
+
+  localStorage.setItem('configPomodoro', JSON.stringify(config))
+
+  document.getElementById("concentracao").value = null
+  document.getElementById("descanso").value = null
+  
 }
