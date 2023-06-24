@@ -1,6 +1,6 @@
-.body {
-  font-family: "Spartan", sans-serif;
-  color: black;
+body {
+  height: 100vh !important;
+  background-color: yellow !important;
 }
 
 .cabecalho {
