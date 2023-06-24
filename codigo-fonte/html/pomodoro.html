@@ -18,9 +18,17 @@
             <div class="toolbar">
                 <div class="toolbarItens">
                     <span>Pomodoro</span>
-                    <button onclick="window.location.href = '../html/index.html'">
-                        <img src="../assets/home.svg">
-                    </button>
+                    <div class="areaToolbar">
+                        <button onclick="window.location.href = '#modalConfig'">
+                            <img src="../assets/configImg.png">
+                        </button>
+                        <button onclick="window.location.href = '../html/estudantil.html'">
+                            <img src="../assets/BackImg.png">
+                        </button>
+                        <button onclick="window.location.href = '../html/index.html'">
+                            <img src="../assets/home.svg">
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -30,7 +38,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <button id="startButton" onclick="iniciarEstudo()">
+                    <button id="startButton" onclick="iniciarTimer()">
                         <img id="startImage" src="../assets/Start.png" alt="">
                     </button>
                 </div>
@@ -51,10 +59,35 @@
         </div>
     </div>
 
+    <div id="modalConfig" class="modal">
+        <div class="content">
+          <h1>Configuração de Pomodoro</h1>
+       
+          <div class="areaInput" style="margin-left: 30px;">
+            <span>Tempo de Concentração</span>
+            <input type="number" id="concentracao" min="1">
+          </div>
+          <div class="areaInput" style="margin-left: 30px;">
+            <span>Tempo de Descanso</span>
+            <input type="number" id="descanso" min="1">
+          </div>
+          <div class="botoesCRUD" style="margin-top: 20px;">
+            <button class="btnSalvar" onclick="salvar()">
+                Salvar
+            </button>
+
+            <button class="btnCancelar" onclick="window.location.href = '#'">
+                Cancelar
+            </button>
+          </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <script src="../src/pomodoro.js"></script>
+
 </body>
 
 </html>
