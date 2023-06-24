@@ -100,84 +100,97 @@ function removerMateria(matId) {
     materia.removeChild(document.getElementById(`materia-${matId}`))
     localStorage.setItem('materias', JSON.stringify(materias))
     document.getElementById("classeBody").removeChild(document.getElementById("areaTarefa"))
+
+    tarefas = tarefas.filter(tar => tar.materiaId !== matId)
+    localStorage.setItem("tarefas", JSON.stringify(tarefas))
 }
 
 var idMateriaSelecionada = 0
 
 function detalhesMateria(matId, matNome) {
-    idMateriaSelecionada = matId
+    console.log(materias.filter(mat => mat.id === matId))
     let classeBody = document.getElementById("classeBody")
-    
-    if(!document.getElementById("divider")) {
-        let divider = document.createElement("div")
-        divider.setAttribute("id", "divider")
-        divider.setAttribute("class", "divider")
-        classeBody.appendChild(divider)
-    }
+    if(materias.filter(mat => mat.id === matId).length > 0) {
+        idMateriaSelecionada = matId
+        
+        if(!document.getElementById("divider")) {
+            let divider = document.createElement("div")
+            divider.setAttribute("id", "divider")
+            divider.setAttribute("class", "divider")
+            classeBody.appendChild(divider)
+        }
 
-    let areaTarefa = document.getElementById("areaTarefa")
-    if(!areaTarefa) {
-        areaTarefa = document.createElement("div")
-        areaTarefa.setAttribute("id", "areaTarefa")
-        areaTarefa.setAttribute("class", "areaTarefa")
-        classeBody.appendChild(areaTarefa)
-    }
+        let areaTarefa = document.getElementById("areaTarefa")
+        if(!areaTarefa) {
+            areaTarefa = document.createElement("div")
+            areaTarefa.setAttribute("id", "areaTarefa")
+            areaTarefa.setAttribute("class", "areaTarefa")
+            classeBody.appendChild(areaTarefa)
+        }
 
-    if(document.getElementById("tituloDetalhe")) {
-        areaTarefa.removeChild(document.getElementById("tituloDetalhe"))
-    }
-    let tituloDetalhe = document.createElement("span")
-    tituloDetalhe.setAttribute("id", "tituloDetalhe")
-    tituloDetalhe.appendChild(document.createTextNode(`Detalhe da matéria: ${matNome}`))
-    areaTarefa.appendChild(tituloDetalhe)
+        if(document.getElementById("tituloDetalhe")) {
+            areaTarefa.removeChild(document.getElementById("tituloDetalhe"))
+        }
+        let tituloDetalhe = document.createElement("span")
+        tituloDetalhe.setAttribute("id", "tituloDetalhe")
+        tituloDetalhe.appendChild(document.createTextNode(`Detalhe da matéria: ${matNome}`))
+        areaTarefa.appendChild(tituloDetalhe)
 
-    if(document.getElementById("botaoTarefa")) {
-        areaTarefa.removeChild(document.getElementById("botaoTarefa"))
-    }
-    let botaoTarefa = document.createElement("button")
-    botaoTarefa.setAttribute("id", "botaoTarefa")
-    botaoTarefa.setAttribute("class", "botaoTarefa")
-    botaoTarefa.setAttribute("onclick", "window.location.href = '#modalTarefa'")
-    botaoTarefa.appendChild(document.createTextNode("AdicionarTarefa"))
+        if(document.getElementById("botaoTarefa")) {
+            areaTarefa.removeChild(document.getElementById("botaoTarefa"))
+        }
+        let botaoTarefa = document.createElement("button")
+        botaoTarefa.setAttribute("id", "botaoTarefa")
+        botaoTarefa.setAttribute("class", "botaoTarefa")
+        botaoTarefa.setAttribute("onclick", "window.location.href = '#modalTarefa'")
+        botaoTarefa.appendChild(document.createTextNode("AdicionarTarefa"))
 
-    areaTarefa.appendChild(botaoTarefa)
+        areaTarefa.appendChild(botaoTarefa)
 
-    if(document.getElementById("tabelaTarefa")) {
-        areaTarefa.removeChild("tabelaTarefa")
-    }
-    let tabela = document.createElement("table")
-    tabela.setAttribute("id", "tabelaTarefa")
+        if(document.getElementById("tabelaTarefa")) {
+            areaTarefa.removeChild("tabelaTarefa")
+        }
+        let tabela = document.createElement("table")
+        tabela.setAttribute("id", "tabelaTarefa")
 
-    let headers = document.createElement("tr")
-    let hTarefa = document.createElement("th")
-    let hNota = document.createElement("th")
-    let hTotal = document.createElement("th")
-    hNota.setAttribute("style", "border-left: 1px solid black; border-right: 1px solid black;")
-    hTarefa.appendChild(document.createTextNode("Tarefa"))
-    hNota.appendChild(document.createTextNode("Nota"))
-    hTotal.appendChild(document.createTextNode("Total"))
-    headers.appendChild(hTarefa)
-    headers.appendChild(hNota)
-    headers.appendChild(hTotal)
+        let headers = document.createElement("tr")
+        let hTarefa = document.createElement("th")
+        let hNota = document.createElement("th")
+        let hTotal = document.createElement("th")
+        hNota.setAttribute("style", "border-left: 1px solid black; border-right: 1px solid black;")
+        hTarefa.appendChild(document.createTextNode("Tarefa"))
+        hNota.appendChild(document.createTextNode("Nota"))
+        hTotal.appendChild(document.createTextNode("Total"))
+        headers.appendChild(hTarefa)
+        headers.appendChild(hNota)
+        headers.appendChild(hTotal)
 
-    for(let tarefa of tarefas) {
-        if(tarefa.materiaId === idMateriaSelecionada) {
-            let linha = document.createElement("tr")
-            let tarNome = document.createElement("td")
-            let tarNota = document.createElement("td")
-            let tarTotal = document.createElement("td")
-            tarNota.setAttribute("style", "border-left: 1px solid black; border-right: 1px solid black;")
-            tarNome.appendChild(document.createTextNode(tarefa.nome))
-            tarNota.appendChild(document.createTextNode(tarefa.nota))
-            tarTotal.appendChild(document.createTextNode(tarefa.pontos))
-            linha.appendChild(tarNome)
-            linha.appendChild(tarNota)
-            linha.appendChild(tarTotal)
-            tabela.appendChild(linha)
+        for(let tarefa of tarefas) {
+            if(tarefa.materiaId === idMateriaSelecionada) {
+                let linha = document.createElement("tr")
+                let tarNome = document.createElement("td")
+                let tarNota = document.createElement("td")
+                let tarTotal = document.createElement("td")
+                tarNota.setAttribute("style", "border-left: 1px solid black; border-right: 1px solid black;")
+                tarNome.appendChild(document.createTextNode(tarefa.nome))
+                tarNota.appendChild(document.createTextNode(tarefa.nota))
+                tarTotal.appendChild(document.createTextNode(tarefa.pontos))
+                linha.appendChild(tarNome)
+                linha.appendChild(tarNota)
+                linha.appendChild(tarTotal)
+                tabela.appendChild(linha)
+            }
+        }
+        tabela.appendChild(headers)
+        areaTarefa.appendChild(tabela)
+    } else {
+        if(document.getElementById("divider")) {
+            classeBody.removeChild(document.getElementById("divider"))
+        }
+        if(document.getElementById("areaTarefa")) {
+            classeBody.removeChild(document.getElementById("areaTarefa"))
         }
     }
-    tabela.appendChild(headers)
-    areaTarefa.appendChild(tabela)
 }
 
 function salvarTarefa() {
