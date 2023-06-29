@@ -11,8 +11,10 @@ for(let j = 0; j<rotinas.length; j++)
     innerRetangle.setAttribute('id', `card-${rotinas[j].id}`)
     innerRetangle.setAttribute('onclick', `abrirVisualizacao(${rotinas[j].id})`)
     let nomeRotinaSpan = document.createElement('span')
+    nomeRotinaSpan.setAttribute('class', 'spanNomeRotina')
     nomeRotinaSpan.appendChild(document.createTextNode(rotinas[j].nome))
     let excluirRotina = document.createElement("button")
+    excluirRotina.setAttribute('class', 'botaoExcluir')
     excluirRotina.setAttribute("onclick", `excluirRotina(${rotinas[j].id})`)
     excluirRotina.appendChild(document.createTextNode("X"))
     innerRetangle.appendChild(excluirRotina)
@@ -51,8 +53,10 @@ function salvarRotina() {
   innerRetangle.setAttribute('id', `card-${rot.id}`)
   innerRetangle.setAttribute('onclick', `abrirVisualizacao(${rot.id})`)
   let nomeRotinaSpan = document.createElement('span')
+  nomeRotinaSpan.setAttribute('class', 'spanNomeRotina')
   nomeRotinaSpan.appendChild(document.createTextNode(rot.nome))
   let excluirRotina = document.createElement("button")
+  excluirRotina.setAttribute('class', 'botaoExcluir')
   excluirRotina.setAttribute("onclick", `excluirRotina(${rot.id})`)
   excluirRotina.appendChild(document.createTextNode("X"))
   innerRetangle.appendChild(excluirRotina)
@@ -62,29 +66,29 @@ function salvarRotina() {
   window.location.href = '#'
 }
 
-function excluirRotina(id)
-{
-  let rot = rotinas.filter(r=> r.id ===id)[0]
-  rotinas = rotinas.filter(r=> r.id !==id)
+function excluirRotina(id) {
+  let rot = rotinas.filter(r => r.id === id)[0]
+  rotinas = rotinas.filter(r => r.id !== id)
   localStorage.setItem("rotinas", JSON.stringify(rotinas))
   let retanguloSemana = document.getElementById(`semana-${rot.diaSemana}`)
   retanguloSemana.removeChild(document.getElementById(`card-${rot.id}`))
   window.location.href = "#"
 }
 
-function abrirVisualizacao(id)
-{
-  let elemento = rotinas.filter(r=> r.id===id)[0]
-  window.location.href = '#modalVisualizacao'
-  let tituloArea = document.getElementById("tituloArea")
-  if(document.getElementById("visualizacaoTitulo")) {
-    tituloArea.removeChild(document.getElementById("visualizacaoTitulo"))
+function abrirVisualizacao(id) {
+  if(rotinas.filter(r => r.id === id).length > 0) {
+    let elemento = rotinas.filter(r=> r.id===id)[0]
+    window.location.href = '#modalVisualizacao'
+    let tituloArea = document.getElementById("tituloArea")
+    if(document.getElementById("visualizacaoTitulo")) {
+      tituloArea.removeChild(document.getElementById("visualizacaoTitulo"))
+    }
+    let titulo = document.createElement("span")
+    titulo.setAttribute("class", "tituloVisualizacao")
+    titulo.setAttribute("id", "visualizacaoTitulo")
+    titulo.appendChild(document.createTextNode(elemento.nome))
+    tituloArea.appendChild(titulo)
   }
-  let titulo = document.createElement("span")
-  titulo.setAttribute("class", "tituloVisualizacao")
-  titulo.setAttribute("id", "visualizacaoTitulo")
-  titulo.appendChild(document.createTextNode(elemento.nome))
-  tituloArea.appendChild(titulo)
 }
 
 function salvarNomeObjetivo() {
@@ -99,6 +103,3 @@ function salvarNomeObjetivo() {
   objetivos.push(obj)
   localStorage.setItem("objetivos", JSON.stringify(objetivos))
 }
-
-
-

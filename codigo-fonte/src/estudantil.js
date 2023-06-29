@@ -108,7 +108,6 @@ function removerMateria(matId) {
 var idMateriaSelecionada = 0
 
 function detalhesMateria(matId, matNome) {
-    console.log(materias.filter(mat => mat.id === matId))
     let classeBody = document.getElementById("classeBody")
     if(materias.filter(mat => mat.id === matId).length > 0) {
         idMateriaSelecionada = matId
