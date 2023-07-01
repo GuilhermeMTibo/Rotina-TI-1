@@ -89,7 +89,7 @@
   </div>
 
   <div id="modalVisualizacao" class="modal">
-    <div class="contentVisualizacao">
+    <div class="contentVisualizacao" id="visualizacaoContent">
       <div class="areaTitulo" id="tituloArea">
         <button class="btnFechar" onclick="window.location.href = '#'">
           X
@@ -106,17 +106,12 @@
         <span>Nome da Rotina</span>
         <input id="nome">
       </div><br>
-
-      <div class="areaInput" style="margin-left: 0px;">
-        <span>Objetivo</span>
-        <input id="nomeObjetivo">
-      </div>
-
-      <label class="container">
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      </label>
   
+      <div class="areaInput" style="margin-left: 0px;">
+        <span>Data</span>
+        <input type="date" id="data">
+      </div><br>
+
       <div class="botoesCRUD" style="margin-top: 10px;">
         <button class="btnSalvar" onclick="salvarRotina()">
             Salvar

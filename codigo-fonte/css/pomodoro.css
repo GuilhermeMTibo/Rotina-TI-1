@@ -23,7 +23,8 @@
 }
 
 .modal .content {
-    height: 270px !important;
+    width: 392px !important;
+    height: 351px !important;
 }
 
 .botaoAcaoTimer {
@@ -61,4 +62,29 @@
     background-color: #006A0B;
     justify-content: center;
     align-items: center;
+}
+
+.areaInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.content h1 {
+    text-align: center;
+}
+
+.botoesCRUD {
+    position: relative;
+    top: 20px;
+}
+
+.areaSuperior {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.areaSuperior div {
+    margin-left: 20px;
 }

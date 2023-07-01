@@ -67,6 +67,7 @@ body {
 .spanNomeRotina {
   margin-left: 10px; 
   margin-top: 10px;
+  word-wrap: break-word;
 }
 
 .button {
@@ -84,17 +85,19 @@ body {
 
 .modal .contentVisualizacao {
   position: relative;
-  background: #FFED4F;
   border-radius: 20px;
   width: 300px;
   height: 300px;
   padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
 }
 
 .btnFechar {
-  background-color: #FFED4F;
   cursor: pointer;
   border-radius: 100%;
+  width: 40px;
+  height: 40px;
 }
 
 .areaTitulo {
@@ -104,6 +107,19 @@ body {
 }
 
 .tituloVisualizacao {
+  width: 260px;
+  font-size: 30px;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.dataArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.dataArea span {
+  text-align: center;
   font-size: 30px;
   font-weight: 500;
 }
