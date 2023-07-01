@@ -1,22 +1,36 @@
 .MomentoConcentreção{    
 }
+
 .timer1{
     font-size: 100px;
 }
+
 .timer2{
     font-size: 100px;
 }
+
 .areaToolbar{
     display:flex ;
     flex-direction: row;
-
 }
+
 .areaToolbar button{
     margin-left: 5px;
 }
+
 .areaInput input{
     width: 80px;
 }
+
 .modal .content {
     height: 270px !important;
+}
+
+.botaoAcaoTimer {
+    width: 80px;
+    height: 80px;
+}
+
+.botaoAcaoTimer img {
+    width: 80px;
 }
