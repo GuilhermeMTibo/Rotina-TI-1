@@ -13,6 +13,18 @@ function iniciarTimer() {
     var display = document.querySelector("#timerEstudo");
     var botaoStart = document.querySelector("#startButton");
     var imagemStart = document.querySelector("#startImage");
+
+    if(!(document.getElementById('vermelhoArea') || document.getElementById('verdeArea'))) {
+      let baixoParte = document.getElementById("baixoParte")
+      
+      let areaInformacao = document.createElement('div')
+      areaInformacao.setAttribute('class', 'areaVermelho')
+      areaInformacao.setAttribute('id', 'vermelhoArea')
+      let span = document.createElement('span')
+      span.appendChild(document.createTextNode('Momento de concentração'))
+      areaInformacao.appendChild(span)
+      baixoParte.append(areaInformacao)
+    }
   
     if (!timerEmAndamento) {
       intervalo = comecaTimer(tempoRestante, display, function() { 
@@ -21,9 +33,33 @@ function iniciarTimer() {
         if (emEstudo) {
           // Terminou o tempo de estudo, iniciar o tempo de descanso
           tempoRestante = duracaoDescanso;
+
+          let baixoParte = document.getElementById("baixoParte")
+
+          baixoParte.removeChild(document.getElementById('vermelhoArea'))
+
+          let areaInformacao = document.createElement('div')
+          areaInformacao.setAttribute('class', 'areaVerde')
+          areaInformacao.setAttribute('id', 'verdeArea')
+          let span = document.createElement('span')
+          span.appendChild(document.createTextNode('Descanso'))
+          areaInformacao.appendChild(span)
+          baixoParte.append(areaInformacao)
         } else {
           // Terminou o tempo de descanso, iniciar o tempo de estudo
           tempoRestante = duracaoEstudo;
+          
+          let baixoParte = document.getElementById("baixoParte")
+
+          baixoParte.removeChild(document.getElementById('verdeArea'))
+          
+          let areaInformacao = document.createElement('div')
+          areaInformacao.setAttribute('class', 'areaVermelho')
+          areaInformacao.setAttribute('id', 'vermelhoArea')
+          let span = document.createElement('span')
+          span.appendChild(document.createTextNode('Momento de concentração'))
+          areaInformacao.appendChild(span)
+          baixoParte.append(areaInformacao)
         }
         emEstudo = !emEstudo; // Alternar entre estudo e descanso
         iniciarTimer();

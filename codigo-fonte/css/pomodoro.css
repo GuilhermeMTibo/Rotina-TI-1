@@ -34,3 +34,31 @@
 .botaoAcaoTimer img {
     width: 80px;
 }
+
+.areaVermelho {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    height: 221px;
+    border-radius: 20px;
+    background-color: #A10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.areaVermelho span, .areaVerde span {
+    color: white;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.areaVerde {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    height: 221px;
+    border-radius: 20px;
+    background-color: #006A0B;
+    justify-content: center;
+    align-items: center;
+}
